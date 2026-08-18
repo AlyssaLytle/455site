@@ -1,0 +1,3 @@
+import{$ as e,B as t,D as n,_ as r,bt as i,v as a,vt as o,y as s}from"./modules/shiki-CJgwYaAR.js";import{n as c,t as l}from"./slidev/context-CQjMZV4w.js";import{t as u}from"./slidev/default-BE6PqenP.js";var d={__name:`02-DFAs.md__slidev_4`,setup(d){let{$slidev:f,$nav:p,$clicksContext:m,$clicks:h,$page:g,$renderContext:_,$frontmatter:v}=c();return m.setup(),(c,d)=>(t(),a(u,i(n(o(l)(o(v),3))),{default:e(()=>[s(` # State Diagram
+
+<!-- <img src="/public/auto-door.png" width="400"/> `),d[0]||=r(`p`,null,[r(`img`,{src:`/assets/autodoor-informal-CGeJlCPZ.png`,alt:``})],-1),d[1]||=r(`p`,null,`This is called a state diagram.`,-1)]),_:1},16))}};export{d as default};
