@@ -24,7 +24,7 @@ Welcome. Today's material is background: the set notation, functions, logic, and
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Today</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 48px 0;">Agenda</h2>
   <div style="display:flex;flex-direction:column;">
@@ -58,7 +58,7 @@ Section break.
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Sets: The Basics</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 44px 0;">What Is a Set?</h2>
   <div style="font-size:30px;color:#DCE3EC;line-height:1.5;max-width:1200px;margin-bottom:44px;">A <b style="color:#EDF2F7;">set</b> is an unordered collection of distinct objects, called its <b style="color:#EDF2F7;">elements</b> or <b style="color:#EDF2F7;">members</b>.</div>
@@ -72,7 +72,6 @@ class: p-0
       <div style="font-size:24px;color:#93A5BD;">duplicates don't count twice</div>
     </div>
   </div>
-</div>
 
 <!--
 Define a set informally: an unordered collection of distinct objects. Emphasize unordered and no duplicates -- both surprise students at first.
@@ -82,7 +81,7 @@ Define a set informally: an unordered collection of distinct objects. Emphasize 
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Sets: The Basics</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 52px 0;">Notation &amp; Membership</h2>
   <div style="display:flex;flex-direction:column;">
@@ -101,7 +100,7 @@ Introduce membership notation and the empty set. This is the vocabulary students
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Sets: The Basics</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 16px 0;">Set-Builder Notation</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:44px;">Instead of listing elements, describe the <b style="color:#DCE3EC;">rule</b> that qualifies them.</div>
@@ -117,7 +116,6 @@ class: p-0
       <div style="font-size:24px;color:#93A5BD;">exactly how we'll define languages soon</div>
     </div>
   </div>
-</div>
 
 <!--
 Introduce set-builder notation as a way to describe sets by a property rather than listing every element. This shows up everywhere once we define L(M).
@@ -127,7 +125,7 @@ Introduce set-builder notation as a way to describe sets by a property rather th
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Sets: The Basics</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 48px 0;">Common Sets You'll See by Name</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
@@ -148,7 +146,7 @@ List the standard named sets students will see referenced by symbol throughout t
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Sets: The Basics</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">Subsets</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:44px;">A is a <b style="color:#DCE3EC;">subset</b> of B if every element of A is also in B.</div>
@@ -165,7 +163,6 @@ class: p-0
       <div style="font-family:'Roboto Mono',monospace;font-size:24px;color:#93A5BD;margin-top:10px;">example: {strings ending in 01} &sub; {0,1}*</div>
     </div>
   </div>
-</div>
 
 <!--
 Define subset and proper subset. Give the concrete example with binary strings so it connects to automata immediately.
@@ -175,7 +172,7 @@ Define subset and proper subset. Give the concrete example with binary strings s
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Sets: The Basics</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">The Power Set</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:36px;">The set of <b style="color:#DCE3EC;">all subsets</b> of A, written &Popf;(A).</div>
@@ -190,7 +187,6 @@ class: p-0
       <div style="font-size:24px;color:#93A5BD;line-height:1.5;">This is exactly the idea behind the <b style="color:#DCE3EC;">subset construction</b> that converts an NFA into a DFA.</div>
     </div>
   </div>
-</div>
 
 <!--
 Introduce the power set. This is genuinely new for most students -- flag that it comes up directly when we build the subset construction converting NFAs to DFAs.
@@ -213,7 +209,7 @@ Section break.
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Set Operations</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 44px 0;">Union &amp; Intersection</h2>
   <div style="display:flex;gap:80px;justify-content:center;flex:1;align-items:center;">
@@ -242,7 +238,6 @@ class: p-0
       <div style="font-size:24px;color:#93A5BD;text-align:center;">in both A and B</div>
     </div>
   </div>
-</div>
 
 <!--
 Union and intersection with Venn diagrams. These are the two operations we'll prove regular languages are closed under.
@@ -252,7 +247,7 @@ Union and intersection with Venn diagrams. These are the two operations we'll pr
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Set Operations</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 44px 0;">Difference &amp; Complement</h2>
   <div style="display:flex;gap:80px;justify-content:center;flex:1;align-items:center;">
@@ -279,7 +274,6 @@ class: p-0
       <div style="font-size:24px;color:#93A5BD;text-align:center;">everything <b>not</b> in A, relative to the universe</div>
     </div>
   </div>
-</div>
 
 <!--
 Difference and complement -- complement is what we use to prove regular languages closed under complement, so tie it back explicitly.
@@ -289,7 +283,7 @@ Difference and complement -- complement is what we use to prove regular language
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Set Operations</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">Cartesian Product</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:36px;">A &times; B is the set of all ordered pairs (a, b) with a &isin; A, b &isin; B.</div>
@@ -308,7 +302,6 @@ class: p-0
       <div style="color:#93A5BD;">This is exactly why a DFA's transition function has signature &delta;: Q &times; &Sigma; &rarr; Q &mdash; it takes an (state, symbol) pair.</div>
     </div>
   </div>
-</div>
 
 <!--
 Cartesian product -- foreshadow that this is exactly how we'll define the transition function's domain, and the product construction for closure proofs.
@@ -318,7 +311,7 @@ Cartesian product -- foreshadow that this is exactly how we'll define the transi
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Set Operations</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 44px 0;">Infinite Sets: A Quick Preview</h2>
   <div style="display:flex;gap:64px;align-items:center;flex:1;">
@@ -331,7 +324,6 @@ class: p-0
       <div style="font-size:24px;color:#EDF2F7;line-height:1.5;">Countability is why we can even ask "how many languages are there?" &mdash; more later in the course.</div>
     </div>
   </div>
-</div>
 
 <!--
 Brief teaser on countability -- not a full proof, just enough that students aren't surprised later. Keep light.
@@ -354,7 +346,7 @@ Section break.
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Functions &amp; Relations</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">What Is a Function?</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:40px;">A <b style="color:#DCE3EC;">relation</b> from A to B is any subset of A &times; B. A <b style="color:#DCE3EC;">function</b> f: A &rarr; B is a relation that assigns <b style="color:#DCE3EC;">exactly one</b> output in B to every input in A.</div>
@@ -375,7 +367,6 @@ class: p-0
       <div style="color:#93A5BD;">This is precisely why &delta;: Q &times; &Sigma; &rarr; Q must be <b>total</b> and <b>single-valued</b> &mdash; that's what "deterministic" means.</div>
     </div>
   </div>
-</div>
 
 <!--
 Define function formally: a relation from A to B assigning exactly one output to each input. Contrast with delta being a function specifically.
@@ -385,7 +376,7 @@ Define function formally: a relation from A to B assigning exactly one output to
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Functions &amp; Relations</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 44px 0;">Injective, Surjective, Bijective</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
@@ -405,7 +396,6 @@ class: p-0
       <svg viewBox="0 0 200 140" style="width:150px;"><circle cx="45" cy="30" r="6" fill="#6CB6EA"/><circle cx="45" cy="70" r="6" fill="#6CB6EA"/><circle cx="45" cy="110" r="6" fill="#6CB6EA"/><circle cx="155" cy="30" r="6" fill="#6CB6EA"/><circle cx="155" cy="70" r="6" fill="#6CB6EA"/><circle cx="155" cy="110" r="6" fill="#6CB6EA"/><line x1="45" y1="30" x2="155" y2="30" stroke="#6CB6EA" stroke-width="2"/><line x1="45" y1="70" x2="155" y2="70" stroke="#6CB6EA" stroke-width="2"/><line x1="45" y1="110" x2="155" y2="110" stroke="#6CB6EA" stroke-width="2"/></svg>
     </div>
   </div>
-</div>
 
 <!--
 Introduce the three key properties of functions. Bijections come up when proving two sets have the same size, which shows up in cardinality/pumping lemma arguments.
@@ -442,7 +432,7 @@ Section break.
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Predicate Logic</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">Propositions &amp; Connectives</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:36px;">A <b style="color:#DCE3EC;">proposition</b> is a statement that is either true or false. We combine them with connectives.</div>
@@ -463,7 +453,7 @@ Define propositions and the five connectives students need. This is the toolkit 
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Predicate Logic</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">Truth Tables</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:36px;">Implication surprises people &mdash; it's false in exactly <b style="color:#DCE3EC;">one</b> of the four rows.</div>
@@ -480,7 +470,6 @@ class: p-0
       <div style="color:#93A5BD;">If p is false, p &rarr; q is <b style="color:#DCE3EC;">vacuously true</b> &mdash; the exact pattern behind proving &empty; &sube; A for any set A.</div>
     </div>
   </div>
-</div>
 
 <!--
 Show a real truth table, especially calling out that implication is only false in one row -- this trips students up constantly.
@@ -490,7 +479,7 @@ Show a real truth table, especially calling out that implication is only false i
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Predicate Logic</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">Predicates &amp; Quantifiers</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:36px;">A <b style="color:#DCE3EC;">predicate</b> P(x) is a statement whose truth depends on x. Quantifiers say how many x make it true.</div>
@@ -525,7 +514,7 @@ Introduce predicates as functions returning true/false, then the two quantifiers
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Predicate Logic</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">Negating Quantifiers</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:36px;">To negate a quantified statement, flip the quantifier and negate what's inside.</div>
@@ -563,7 +552,7 @@ Section break.
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Proof Techniques</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">Direct Proof</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:40px;">Assume the hypothesis is true, then chain logical steps to the conclusion.</div>
@@ -575,7 +564,6 @@ class: p-0
       &rArr; n&sup2; is 2 &times; (an integer) &rArr; n&sup2; is even &#9633;
     </div>
   </div>
-</div>
 
 <!--
 Direct proof: assume the hypothesis, chain implications to the conclusion. Give a tiny concrete example.
@@ -585,7 +573,7 @@ Direct proof: assume the hypothesis, chain implications to the conclusion. Give 
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Proof Techniques</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">Proof by Contradiction</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:40px;">Assume the <b style="color:#DCE3EC;">opposite</b> of what you want, then derive something impossible.</div>
@@ -599,7 +587,6 @@ class: p-0
       <div style="font-size:24px;color:#EDF2F7;line-height:1.5;">The pumping lemma proves a language isn't regular by assuming it IS, then contradicting the lemma.</div>
     </div>
   </div>
-</div>
 
 <!--
 Proof by contradiction: assume the negation, derive an absurdity. This is the exact shape of pumping lemma proofs coming up.
@@ -609,7 +596,7 @@ Proof by contradiction: assume the negation, derive an absurdity. This is the ex
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Proof Techniques</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 8px 0;">Proof by Induction</h2>
   <div style="font-size:28px;color:#93A5BD;margin-bottom:36px;">Prove a statement for <b style="color:#DCE3EC;">every</b> natural number by proving it for 0, and that each case implies the next.</div>
@@ -674,7 +661,7 @@ Section break.
 class: p-0
 ---
 
-<div style="background:#111B2C;display:flex;flex-direction:column;padding:100px 140px 80px 140px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;height:100%;box-sizing:border-box;">
+
 <div style="font-size:24px;letter-spacing:3px;color:#6CB6EA;font-weight:700;text-transform:uppercase;margin-bottom:20px;">Bringing It Together</div>
   <h2 style="font-size:52px;font-weight:700;color:#EDF2F7;margin:0 0 48px 0;">Key Takeaways</h2>
   <div style="display:flex;flex-direction:column;">

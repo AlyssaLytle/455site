@@ -37,9 +37,9 @@ jobs:
             --out dist/00-syllabus \
             --base /${{ github.event.repository.name }}/00-syllabus/
 
-          nr build 01-proofs.md \
-            --out dist/01-proofs \
-            --base /${{ github.event.repository.name }}/01-proofs/
+          nr build 01-math-review.md \
+            --out dist/01-math-review \
+            --base /${{ github.event.repository.name }}/01-math-review/
 
           nr build 02-DFAs.md \
             --out dist/02-DFAs \
@@ -57,8 +57,9 @@ jobs:
             <body>
               <h1>Slide Decks</h1>
               <ul>
-                <li><a href="./01-proofs/">Proofs</a></li>
-                <li><a href="./02-DFAs/">DFAs</a></li>
+                <li><a href="./00-syllabus/">Aug 18: Course Intro</a></li>
+                <li><a href="./01-math-review/">Aug 20: Discrete Review</a></li>
+                # <li><a href="./02-DFAs/">DFAs</a></li>
               </ul>
             </body>
           </html>

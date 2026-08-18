@@ -27,11 +27,14 @@
   font-size: 1.9rem;
   font-weight: 700;
   color: var(--unc-blue-pale);
-  margin: 0 0 1.5rem;
+
 }
-.default-layout :deep(p),
+.default-layout :deep(p){
+  font-size: 1.25rem;
+  color: var(--unc-paper);
+}
 .default-layout :deep(li) {
-  font-size: 1.65rem;
+  font-size: 1.25rem;
   line-height: 1.75;
   color: var(--unc-paper);
 }
