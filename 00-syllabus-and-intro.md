@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: default
+theme: ./unc-cs
 title: COMP 455 Syllabus
 info: |
   ## Fall 2026 syllabus deck for COMP 455

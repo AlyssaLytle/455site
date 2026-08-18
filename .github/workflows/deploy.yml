@@ -33,6 +33,10 @@ jobs:
 
       - name: Build presentations
         run: |
+          nr build 00-syllabus-and-intro.md \
+            --out dist/00-syllabus \
+            --base /${{ github.event.repository.name }}/00-syllabus/
+
           nr build 01-proofs.md \
             --out dist/01-proofs \
             --base /${{ github.event.repository.name }}/01-proofs/
