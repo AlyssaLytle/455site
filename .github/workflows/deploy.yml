@@ -31,15 +31,37 @@ jobs:
       - name: Install dependencies
         run: nci
 
-      - name: Build
+      - name: Build presentations
         run: |
-          nr build 01-proofs.md --out dist/01-proofs --base /${{ github.event.repository.name }}/01-proofs/
-          nr build 02-DFAs.md --out dist/02-DFAs --base /${{ github.event.repository.name }}/02-DFAs/
+          nr build 01-proofs.md \
+            --out dist/01-proofs \
+            --base /${{ github.event.repository.name }}/01-proofs/
+
+          nr build 02-DFAs.md \
+            --out dist/02-DFAs \
+            --base /${{ github.event.repository.name }}/02-DFAs/
+
+      - name: Create landing page
+        run: |
+          cat > dist/index.html <<'EOF'
+          <!doctype html>
+          <html>
+            <head>
+              <meta charset="UTF-8">
+              <title>Slide Decks</title>
+            </head>
+            <body>
+              <h1>Slide Decks</h1>
+              <ul>
+                <li><a href="./01-proofs/">Proofs</a></li>
+                <li><a href="./02-DFAs/">DFAs</a></li>
+              </ul>
+            </body>
+          </html>
+          EOF
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
-        with:
-          enablement: true
 
       - uses: actions/upload-pages-artifact@v5
         with:
@@ -51,7 +73,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
-    name: Deploy
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
