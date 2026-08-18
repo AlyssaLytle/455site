@@ -1,0 +1,1 @@
+var e=`/assets/formal-door-gos01bH4.png`;export{e as t};
