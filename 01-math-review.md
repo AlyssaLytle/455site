@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: ./unc-cs
+theme: defaut
 title: COMP 455 Syllabus
 info: |
   ## Mathematical Foundations for Theory of Computation
