@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: seriph
+theme: ./unc-cs
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 # background: https://cover.sli.dev
@@ -19,6 +19,8 @@ transition: slide-left
 comark: true
 # duration of the presentation
 duration: 35min
+kicker: COMP 455 · Models of Languages and Computation
+layout: cover
 ---
 
 <!-- NOTE: Add starting slides from NFA to this one! -->
@@ -27,6 +29,10 @@ duration: 35min
 <!-- pandoc -s notes/01-fa.md -o pdfs/03-finite-automata.tex -->
 
 # Finite Automata and Regular Languages
+
+
+UNC-Chapel Hill, Fall 2026
+
 
 ---
 
@@ -58,17 +64,17 @@ Rear pad: Confirm person has passed through, don't hit other person standing the
 
 This is called a **state transition table**.
 
-**Closed** and **Open** are states. 
+**Closed** and **Open** are *states*. 
 
 They take Front, Rear, Both, and Neither as *inputs* to tell them what next-state to transition to.
 </div>
 
----
+
 
 <!-- # State Diagram
 
-<!-- <img src="/public/auto-door.png" width="400"/> -->
-![](/public/autodoor-informal.png)
+ <img src="/public/auto-door.png" width="400"/> 
+
 
 
 This is called a state diagram.
@@ -76,6 +82,15 @@ This is called a state diagram.
 
 
 --- -->
+
+---
+layout: section
+
+---
+
+# Formal Definition of a DFA
+
+---
 
 # Formal Definition
 
@@ -93,15 +108,15 @@ A finite automaton can be expressed as 5-tuple $(Q, \Sigma, \delta, s, F)$ where
 
 </v-clicks>
 
+
+
+
 ---
-layout: two-cols
 
 
----
 
-# So If We're Being Technical About It...
+# Back to Our Door Example...
 
-(Which we are!)
 
 - $Q: \{Open, Closed\}$ 
 - $\Sigma: \{Front, Rear, Both, Neither\}$
@@ -109,10 +124,9 @@ layout: two-cols
 - $s \in Q: Closed$
 - $F \subseteq Q: \{Open, Closed\}$
 
-::right::
 
 
-<div class="pt-20">
+
 <v-clicks>
 
 In the transition table, denote a start state with $\rightarrow$ and accept states with $*$.
@@ -124,15 +138,19 @@ In the transition table, denote a start state with $\rightarrow$ and accept stat
 | **Open** $*$| Open | Open | Open | Closed |
 
 </v-clicks>
-</div>
+
+
+
+
 
 ---
-layout: two-cols
 
 
----
 
 # Getting More Comfortable with $\delta$...
+
+
+
 
 
 - $\delta: Q \times \Sigma \to Q: \textrm{Our transition table}$
@@ -146,10 +164,10 @@ layout: two-cols
 | $\rightarrow$ **Closed** $*$ | Open | Closed | Closed | Closed |
 | **Open** $*$| Open | Open | Open | Closed |
 
-::right::
 
 
-<div class="pt-20">
+
+<div class="pt-10">
 <v-clicks>
 
 - $\delta$ maps from one state + input to a new state.
@@ -173,6 +191,15 @@ A state diagram can be used as an alternative to a transition table to represent
 - $\delta: Q \times \Sigma \to Q: \textrm{Shown in state diagram}$
 - $s \in Q: Closed$
 - $F \subseteq Q: \{Open, Closed\}$
+
+
+
+---
+layout: section
+
+---
+
+#  Languages
 
 ---
 
@@ -198,7 +225,11 @@ layout: two-cols
 
 ---
 
+::title::
+
 # Another Example
+
+::left::
 
 Let $M$ be:
 
@@ -208,7 +239,7 @@ Let $M$ be:
 
 What are $(Q, \Sigma, \delta,s, F)$?
 
-<v-clicks>
+<!-- <v-clicks>
 
 - $Q: \{q_1, q_2\}$ 
 - $\Sigma: \{0, 1\}$
@@ -216,25 +247,29 @@ What are $(Q, \Sigma, \delta,s, F)$?
 - $s: q_1$
 - $F: \{q_2\}$
 
-</v-clicks>
+</v-clicks> -->
 
----
+
 
 ---
 layout: two-cols
 
 
 ---
-
+::title::
 # Finding the Language of $M$
 
+
+::left::
 Let $M$ be:
 
 <img src="/public/fa.png" width="400"/>
 
-::right::
 
 What is $L(M)$?
+
+::right::
+
 
 Let's consider which possible input strings end in an accept state...
 
@@ -262,11 +297,96 @@ $L(M)$ is the set of all strings that end with $1$!
 $L(M) = \{w ~|~ w \textbf{ ends with } 1\}$ 
 </div> 
 
+
+
+
+---
+
+# A Regular Language
+
+A language is a *regular language* if there exists a finite automaton that recognizes it.
+
+<v-clicks>
+Example:
+
+We now know $L(M) = \{w ~|~ w \textbf{ ends with } 1\}$ is a regular language!
+</v-clicks>
+
+
+
+
+
+---
+layout: section
+
+---
+
+# Practice
+
+---
+
+# Practice 
+
+Let 
+
+$$ L = \{w | w \textrm{ is of even length and begins with } 01 \}$$
+
+Prove $L$ is a regular language.
+
+---
+
+<!-- # Practice
+
+Let us design a DFA to accept the language:
+
+$$ L = \{w | w \textrm{ is of even length and begins with } 01 \}$$
+
+What we need to track:
+
+* Whether it starts with 01
+* Whether the input length is even
+
+--- -->
+
+
+
+# Gumball Machine Problem
+
+Design a DFA that represents a gumball machine with the following properties:
+
+* It takes nickels and dimes as inputs
+* If it receives 15 cents total, it dispenses a gumball
+* If it receives more than 15 cents, it dispenses a gumball and change
+
+
+Think of an "accept" state as one where a gumball is dispensed.
+
+(It's ok if your solution doesn't look quite like your neighbor's! There are multiple correct answers! We're going to compare!)
+
+---
+
+# Gumball Machine Solutions
+
+--- 
+layout: section
+---
+
+# Formally Defining Acceptance
+
+
 ---
 
 
 
-# Formal Definition of Computation
+
+# Formal Definition of Acceptance
+
+Other ways to describe acceptance of string $x$:
+
+* "String $x$ is recognized by this automaton". 
+* "String $x$ is a member of the language generated by this automaton."
+
+Acceptance means that the DFA ends in an accept state, so we can say:
 
 Let $M = (Q, \Sigma, \delta,s, F)$ 
 
@@ -284,98 +404,184 @@ $M$ accepts $w$ if there exists a sequence of *states* $r_1, r_2, \ldots, r_n$ s
 
 ---
 
-# A Regular Language
-
-A language is a *regular language* if there exists a finite automaton that recognizes it.
-
-<v-clicks>
-Example:
-
-We now know $L(M) = \{w ~|~ w \textbf{ ends with } 1\}$ is a regular language!
-</v-clicks>
-
----
-
-# Language Operations
-
-- Union: $A \cup B = \{x| x\in A \textrm{ or } x \in B\}$ 
-
-- Concatenation: $A \circ B = \{xy| x \in A \textrm{ and } y \in B\}$
-
-- Star: $A^* = \{x_1 x_2 \ldots x_k | k \geq 0 \textrm{ and each } x_i \in A \}$
+# Another Formal Definition of Acceptance
 
 
+We've so far discussed $\delta$ in terms of
+
+- $\delta: Q \times \Sigma \to Q$
+
+In other words $\delta$ is handling state transitions given a single input from $\Sigma$.
+
+What if we wanted to discuss *strings* of input?
 
 ---
 
-# Language Operations Example
+# Extending the Transition Function to Strings
 
-Let $\Sigma$ be the standard English alphabet
 
-If $A = \{\textrm{good}, \textrm{bad}\}$
-$B= \{\textrm{cat}, \textrm{dog}\}$
+$$\hat{\delta}: Q \times \Sigma^* \to Q$$
+
+## Formal Definition
+
+Let $w$ be a string of the form $xa$; 
+
+That is $w= xa$, where $x$ is a string and $a$ is a symbol.
+
+Then 
+
+$$\hat{\delta}(q,w) = \delta(\hat{\delta}(q,x),a)$$
 
 
 <v-clicks>
 
-- $A \cup B = \{\textrm{good}, \textrm{bad}, \textrm{cat}, \textrm{dog}\}$
+**Base case:**
 
-- $A \circ B = \{\textrm{goodcat}, \textrm{badcat}, \textrm{gooddog}, \textrm{baddog}\}$
-
-- $A^* = \{"", \textrm{good}, \textrm{bad}, \textrm{goodgood}, \textrm{goodbad}, \ldots \}$
-
-
-- Other * usage example:
-
-  $L(M) = \{w  ~|~ w \textbf{ ends with } 1\}$  
-
-  becomes
-
-  $L(M) = \{w \in \{0,1\}^* ~|~ w \textbf{ ends with } 1\}$ 
+$$\hat{\delta}(q,\epsilon) = q$$
 
 </v-clicks>
 
 
 
 ---
-
-# Practice [^hopcroft]
-
-Let 
-
-$$ L = \{w | w \textrm{ is of even length and begins with } 01 \}$$
-
-Prove $L$ is a regular language.
+layout: two-cols 
 
 ---
+
+::title::
 
 # Practice
 
-Let us design a DFA to accept the language:
+::left::
 
-$$ L = \{w | w \textrm{ is of even length and begins with } 01 \}$$
+<img src="/public/fa.png" width="300"/>
 
-What we need to track:
+$L(M) = \{w ~|~ w \textbf{ ends with } 1\}$ 
 
-* Whether it starts with 01
-* Whether the input length is even
+::right::
+
+<v-clicks>
+
+$$ {1|2|3|4|5|6|7|8|all}
+\begin{aligned}
+\hat{\delta}(q_1, 0101) 
+&= \delta(\hat{\delta}(q_1,010),1)\\
+&= \delta(\delta(\hat{\delta}(q_1,01),0),1)\\
+&= \delta(\delta(\delta(\hat{\delta}(q_1,0),1),0),1)\\
+&= \delta(\delta(\delta(\delta(\hat{\delta}(q_1,\epsilon),0),1),0),1)\\
+&= \delta(\delta(\delta(\delta(q_1,0),1),0),1)\\
+&= \delta(\delta(\delta(q_1,1),0),1)\\
+&= \delta(q_1,1)\\
+&= q_2\\
+\end{aligned} $$
+
+</v-clicks>
 
 ---
 
-<!-- ---
+# Acceptance Redefined
 
-# Gumball Machine Problem
-    Design a DFA that represents a gumball machine with the following properties:
+<v-clicks>
 
-    * It takes nickels and dimes as inputs
-    * If it receives 15 cents total, it dispenses a gumball
-    * If it receives more than 15 cents, it dispenses a gumball and change
+Now we can use $\hat{\delta}$ to define acceptance to a language!
 
+For automaton $M = (Q, \Sigma, \delta, s, F)$, 
 
-    Think of an "accept" state as one where a gumball is dispensed.
+$x \in L(M)$ iff $\hat{\delta}(s,x) \in F$.
 
-    (It's ok if your solution doesn't look quite like your neighbor's! There are multiple correct answers! We're going to compare!)
+</v-clicks>
+
+---
+layout: section
 
 ---
 
-# Gumball Machine Solutions -->
+# Proving Properties About Automata 
+
+---
+
+# Proving Properties About Automata 
+
+## Want to Prove (WTP):
+
+Assume $A$ and $B$ are regular languages. Then $A \cap B$ is also regular.
+
+---
+
+# Proving Properties About Automata 
+
+## Want to Prove (WTP):
+
+Assume $A$ and $B$ are regular languages. Then $A \cap B$ is also regular.
+
+If $A$ and $B$ are regular, then there exist automata
+
+$M_1 = (Q_1, \Sigma, \delta_1, s_1, F_1)$
+
+$M_2 = (Q_2, \Sigma, \delta_2, s_2, F_2)$
+
+With $L(M_1) = A$ and $L(M_2) = B$.
+
+To prove $A \cap B$ is regular, we need to build an automaton for it!
+
+*It's a proof by construction!*
+
+---
+
+# Proof by Construction
+
+Has two main elements:
+
+1. The construction
+2. Proof that the construction satisfies the claim
+
+---
+
+# Proof by Construction
+
+Has two main elements:
+
+1. Construction of automaton $M_3$ 
+2. Proof that $L(M_3) = L(M_1) \cap L(M_2)$
+
+---
+
+# Construction of $M_3$
+
+* $L(M_1) = A$ and $L(M_2) = B$.
+* $M_1 = (Q_1, \Sigma, \delta_1, s_1, F_1)$
+* $M_2 = (Q_2, \Sigma, \delta_2, s_2, F_2)$
+
+
+Let $M_3 = (Q_3, \Sigma, \delta_3, s_3, F_3)$
+
+with 
+
+---
+
+# Proof that $L(M_3) = L(M_1) \cap L(M_2)$
+
+We're going to work with this assumption: 
+
+## Lemma A
+
+For all $x \in \Sigma^*$, $\hat{\delta_3}((p,q),x) = (\hat{\delta_1}(p,x),\hat{\delta_2}(q,x))$.
+
+
+---
+
+# Proof that $L(M_3) = L(M_1) \cap L(M_2)$
+
+## Our Toolbox (What We Know)
+
+* $L(M_1) = A$ and $L(M_2) = B$.
+* $M_1 = (Q_1, \Sigma, \delta_1, s_1, F_1)$
+* $M_2 = (Q_2, \Sigma, \delta_2, s_2, F_2)$
+* Our Construction of $M_3= (Q_3, \Sigma, \delta_3, s_3, F_3)$
+    * $Q_3 = Q_1 \times Q_2 = \{(p,q) \mid p \in Q_1, q \in Q_2 \}$
+    * $\delta_3((p,q),d) = (\delta_1(p,d), \delta_2(q,d))$
+    * $s_3 = (s_1,s_2)$
+    * $F_3 = F_1 \times F_2$
+* Lemma A: $\hat{\delta_3}((p,q),x) = (\hat{\delta_1}(p,x),\hat{\delta_2}(q,x))$.
+
+---

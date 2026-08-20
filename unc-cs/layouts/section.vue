@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 7.3rem;
-  background: var(--unc-navy);
+  background: var(--unc-blue);
 }
 .section-index {
   font-size: 11.5rem;
@@ -25,7 +25,7 @@
 .section-layout :deep(h2) {
   font-size: 4rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--unc-ink);
   margin: 0;
 }
 </style>

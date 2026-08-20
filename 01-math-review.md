@@ -25,6 +25,26 @@ UNC-Chapel Hill, Fall 2026
 
 ---
 
+# Housekeeping
+
+* To do: 
+  * LS00 (syllabus) 
+  * LS01 (*after* today)
+  * HW00 (*after* today)
+* Look under "Modules" and "Pages" on Canvas for course content
+* Any logistics questions?
+
+---
+kicker: COMP 455 · Models of Languages and Computation
+layout: cover
+---
+
+# Mathematical Foundations: A Review
+
+UNC-Chapel Hill, Fall 2026
+
+---
+
 # Sets - Definition
 
 A ***set*** is an unordered collection of objects.
@@ -569,7 +589,7 @@ you can typically break that statement into the form $P \implies Q$.
 
 </v-clicks>
 
----
+
 
 ---
 

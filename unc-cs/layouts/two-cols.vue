@@ -42,4 +42,12 @@
   flex: 1;
   min-width: 0;
 }
+.two-cols-layout :deep(table){
+  border-collapse: collapse; 
+  border: 2px solid var(--unc-paper);
+}
+.two-cols-layout :deep(th), :deep(td) {
+  /* Sets thickness, style, and line color */
+  border: 1px solid var(--unc-paper); 
+}
 </style>

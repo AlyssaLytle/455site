@@ -44,4 +44,12 @@
   border-radius: 6px;
   color: var(--unc-navy);
 }
+.default-layout :deep(table){
+  border-collapse: collapse; 
+  border: 2px solid var(--unc-paper);
+}
+.default-layout :deep(th), :deep(td) {
+  /* Sets thickness, style, and line color */
+  border: 1px solid var(--unc-paper); 
+}
 </style>
