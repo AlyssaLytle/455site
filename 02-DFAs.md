@@ -36,6 +36,19 @@ UNC-Chapel Hill, Fall 2026
 
 ---
 
+# Lecture Notes
+
+* Downloadable PDF on Canvas, paper copies available
+
+* Notes cover today + Thursday's lectures
+
+* Fill out pdf on tablet or scan paper copy using Gradescope app on phone (*must be hand-written!*)
+
+* Due Thursday night
+
+
+---
+
 # Finite Automaton: An Example
 
 Our example: an automatic door
