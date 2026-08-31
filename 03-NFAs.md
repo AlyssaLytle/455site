@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: seriph
+theme: ./unc-cs
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 # background: https://cover.sli.dev
@@ -14,17 +14,15 @@ class: text-center
 drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
-transition: slide-left
+transition: fade
 # enable Comark Syntax: https://comark.dev/syntax/markdown
 comark: true
 # duration of the presentation
 duration: 35min
+kicker: COMP 455 · Models of Languages and Computation
+layout: cover
 ---
 
-<!-- pandoc -t slidy -s notes/02-fa-prac.md -o slides/04-dfa-practice.html --webtex -->
-
-
-<!-- pandoc -s notes/02-fa-prac.md -o slides/04-dfa-practice.html -->
 
 # Deterministic vs. Nondeterministic Finite Automata 
 
@@ -108,28 +106,22 @@ where
 
 - $Q$: A finite set of states 
 - $\Sigma$: A finite alphabet
-- <span v-mark.line.green>$\Delta$: a function $Q \times \Sigma \to 2^Q$</span>
+- <span v-mark.line.green>$\Delta$: a function $Q \times \Sigma \to \mathcal{P}(Q)$</span> 
 - <span v-mark.line.green>$S \subseteq Q$: A *set* of start states</span>
 - $F \subseteq Q$: A set of accept states
 
-Where $2^Q$ is the *power set* of $Q$. ($\{A \mid A \subseteq Q\}$)
 
 
 ---
 
-# Example
+# Example (LN1)
 
-Draw an NFA over the alphabet $\{a,b\}$ such that it accepts:
+Let language $L$ be:
 
-$$A = \{w \in \{a,b\}^* \mid \textrm{the last symbol is } a \}$$
+$$L = \{w \in \{0,1\}^* \mid \textrm{the last symbol is } 1 \}$$
 
-E.g. it accepts $ababba$ and $aaa$ but not $aab$ or $babab$.
-
-<v-clicks>
-
-<img src="/public/nfa-lc-a.png" width="300"/>
-
-</v-clicks>
+* Draw a DFA that recognizes $L$
+* Draw an NFA that recognizes $L$
 
 --- 
 layout: two-cols 
@@ -139,98 +131,36 @@ layout: two-cols
 
 # Undefined/ Multiple Transitions
 
-<img src="/public/nfa-lc-a.png" width="300"/>
-
+How does that look in a transition table?
 
 <v-clicks>
 
-As shown in this example, NFAs can contain transition to a *set* of possible next-states over a single input!
+As shown in our example, NFAs can contain transition to a *set* of possible next-states over a single input!
 
-Note how $\Delta(s,a) = \{s,q\}$
 
 And NFAs don't *have* to have a transition defined for every state, input combination! 
 
-Note how $\Delta(q,a)$ and $\Delta(q,b)$ are not defined!
-
-</v-clicks>
-
-::right::
-
-<v-clicks>
-
-How does that look in a transition table?
-
-
-| | $a$| $b$ |
-| --- | --- | --- |
-| $\rightarrow s$  | $\{s,q\}$ | $\{s\}$ |
-|$q^*$ | $\empty$ | $\empty$ |
-</v-clicks>
-
-<v-clicks>
-
-Now let's think about how this works in terms of possible input strings...
 
 </v-clicks>
 
 
+::left::
 
----
-
-# What does "acceptance" mean?
-
-<!-- - "An NFA accepts a string $w$ if it is possible to make any sequence of choices of next state, while reading the characters of $w$, and go from the start state to any accepting state." - Hopcroft et al. [^hopcroft] -->
-
-A nondeterministic automaton is said to *accept* its input $w$ if there exists *at least* one computation path on input $w$ from a start state to an accept state.
-
----
-layout: two-cols
-
----
-
-Computation on an NFA
-
-<img src="/public/nfa-lc-a.png" width="300"/>
-
-Two basic principles:
-
-* A branching of computation paths occurs whenever there is more than one next-state in the transition.
-
-* No defined transition for an input-state pair means that string is *not* accepted.
-
+<img src="/public/nfa-lc-1.png" width="300"/>
 
 ::right::
 
 
+<div align="center">
 
-<v-clicks>
+| | $0$| $1$ |
+| ---: | :---: | :---: |
+| $\rightarrow s$  | $\{s\}$ | <span v-mark="{ at:1, color: 'yellow', type: 'box' }">  $\{s,q\}$ </span>|
+|$q^*$ | <span v-mark="{ at:2, color: 'yellow', type: 'box' }">  $\empty$ </span> | <span v-mark="{ at:2, color: 'yellow', type: 'box' }">  $\empty$ </span> |
 
-Consider the input string $ab$...
+</div>
 
-So we are computing $\hat{\Delta}(s,ab) = \Delta(\Delta(s,a),b)$
 
-First let's consider $\Delta(s,a)$
-
-$${1|1-2|1-3}
-\begin{align*}
-\Delta(s,a) &=\\
-&\textrm{Computation Path 1: } s \\
-&\textrm{Computation Path 2: } q \\
-\end{align*}
-$$
-
-Now $\Delta(\Delta(s,a),b)$ must consider that branching...
-
-$${1|1-2|1-3}
-\begin{align*}
-\Delta(\Delta(s,a),b) &=\\
-&\textrm{Computation Path 1: } \Delta(s,b)  = s\\
-&\textrm{Computation Path 2: } \Delta(q,b) \\
-\end{align*}
-$$
-
-$\Delta(s,b) = s$ is not an accept state and $\Delta(q,b)$ is not defined, so we know the string $ab$ is *not* accepted.
-</v-clicks>
 
 ---
 
@@ -248,6 +178,13 @@ $\Delta(s,b) = s$ is not an accept state and $\Delta(q,b)$ is not defined, so we
 ---
 
 # Another example 
+Draw an NFA over the alphabet $\{a,b\}$ such that it accepts:
+
+$$A = \{w \in \{a,b\}^* \mid w \textrm{ has } 2m \textrm{ or } 3m \textrm{ } a's \}$$
+
+
+
+<!-- # Another example 
 Draw an NFA over the alphabet $\{a,b\}$ such that it accepts:
 
 $$A = \{w \in \{a,b\}^* \mid w \textrm{ has } 3m \textrm{ or } 4m \textrm{ } a's \}$$
@@ -273,7 +210,209 @@ $$A = \{w \in \{a,b\}^* \mid w \textrm{ has } 3m \textrm{ or } 4m \textrm{ } a's
 
 <img src="/public/3m4m-epsilon.png" width="300"/>
 
-</v-click>
+</v-click> -->
+
+---
+
+# $\hat{\Delta}$
+
+For a nondeterministic automaton $N = (Q, \Sigma, \Delta, S, F)$, $\Delta : Q \times \Sigma \to 2^Q$
+
+  and $\hat{\Delta}$ is defined such that $\hat{\Delta} : Q \times \Sigma^* \to 2^Q$
+
+  and for $A \subseteq Q, a \in \Sigma, x \in \Sigma^*$
+
+  ## Base Case:
+    
+<v-clicks>
+
+
+  $$\hat{\Delta}(A, \varepsilon) = A $$
+$$ \hat{\Delta}(A, a) = \bigcup_{q \in A}\Delta(q,a) $$
+
+</v-clicks>
+
+  ## Recursive Rule:
+
+<v-clicks>
+
+$$\hat{\Delta}(A, xa) = \bigcup_{q \in \hat{\Delta}(A,x)} \Delta(q,a) $$
+</v-clicks>
+
+--- 
+layout: two-cols 
+---
+
+# Computation Paths
+
+## On input 111
+
+::left::
+
+<div align="center">
+
+| Computation Step | Number of Paths |
+| :--: | :--:
+| 0 | 1 | 
+
+</div>
+
+::right::
+
+<div align="center">
+
+### Possible States
+
+<img src="/public/nfa-cpath/cpath1.png" width="270"/>
+
+</div>
+
+
+--- 
+layout: two-cols 
+---
+
+# Computation Paths
+
+## On input <span style="color: yellow;">1</span> 11
+
+::left::
+
+<div align="center">
+
+| Computation Step | Number of Paths |
+| :--: | :--:
+| 0 | 1 | 
+| 1 | 2 |
+
+</div>
+
+::right::
+
+<div align="center">
+
+### Possible States
+
+<img src="/public/nfa-cpath/cpath2.png" width="270"/>
+
+</div>
+
+--- 
+layout: two-cols 
+---
+
+# Computation Paths
+
+## On input 1<span style="color: yellow;">1</span> 1
+
+::left::
+
+<div align="center">
+
+| Computation Step | Number of Paths |
+| :--: | :--:
+| 0 | 1 | 
+| 1 | 2 |
+| 2 | 3 |
+
+
+</div>
+
+::right::
+
+<div align="center">
+
+### Possible States
+
+<img src="/public/nfa-cpath/cpath3.png" width="270"/>
+
+</div>
+
+
+--- 
+layout: two-cols 
+---
+
+# Computation Paths
+
+## On input 11<span style="color: yellow;">1</span> 
+
+::left::
+
+<div align="center">
+
+| Computation Step | Number of Paths |
+| :--: | :--:
+| 0 | 1 | 
+| 1 | 2 |
+| 2 | 3 |
+| 3 | 4 |
+
+
+
+</div>
+
+<v-clicks>
+
+Possible end states: $s$, $q$, $\empty$, $\empty$
+
+Is the string $111$ accepted?
+
+*Yes!* Because $q$ is an accept state!
+
+</v-clicks>
+
+::right::
+
+<div align="center">
+
+### Possible States
+
+<img src="/public/nfa-cpath/cpath4.png" width="270"/>
+
+</div>
+
+---
+
+# What does "acceptance" mean?
+
+<!-- - "An NFA accepts a string $w$ if it is possible to make any sequence of choices of next state, while reading the characters of $w$, and go from the start state to any accepting state." - Hopcroft et al. [^hopcroft] -->
+
+A nondeterministic automaton is said to *accept* its input $w$ if there exists *at least* one computation path on input $w$ from a start state to an accept state.
+
+---
+layout: two-cols
+
+---
+
+
+
+# Computation on an NFA
+
+::left::
+
+
+
+<img src="/public/nfa-lc-a.png" width="300"/>
+
+Two basic principles:
+
+* A branching of computation paths occurs whenever there is more than one next-state in the transition.
+
+* No defined transition for an input-state pair means that string is *not* accepted.
+
+
+::right::
+
+
+
+<img src="/public/nfa-cpath/cpath4.png" width="300"/>
+
+
+
+
+   
+
 
 
 
@@ -292,6 +431,8 @@ layout: two-cols
 
 # Every DFA can be expressed as an NFA
 
+::left::
+
 Let's take an example DFA from a previous class...
 
 $$A = \{w \in \{a,b\}^* \mid w \textrm{ has odd length} \}$$
@@ -306,24 +447,22 @@ $M = (Q_M, \Sigma, \delta_M, s_M, F_M)$.
 
 <v-clicks>
 
-So, for NFA $N = (Q_N, \Sigma, \Delta_N, S_N, F_M)$ we 
+So, for NFA $N = (Q_N, \Sigma, \Delta_N, S_N, F_M)$ 
 
 * $Q_N = Q_M$
 * $\Delta_N:$ 
 
 | | $a$| $b$ |
 | --- | --- | --- |
-| $\rightarrow s$  | $\{q\}$ | $\{q\}$ |
-|$q^*$ | $\{s\}$ | $\{s\}$ |
+| $\rightarrow q_0$  | $\{q_1\}$ | $\{q_1\}$ |
+|$q_1^*$ | $\{q_0\}$ | $\{q_0\}$ |
 
 
-
-* $S_N = \{s_M\}$
+* $S_N = \{q_0\}$
 
 * $F_N = F_M$
 
-If we wanted to rewrite this as an NFA $N$ with the same language, the tuple representation would change only slightly to account for the fact that an NFA has a *set* of start states and that $\Delta$ maps to a *set* of states.
-
+The tuple representation changes only slightly because an NFA has a *set* of start states and $\Delta$ maps to a *set* of states.
 
 </v-clicks>
 

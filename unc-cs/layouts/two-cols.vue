@@ -1,7 +1,7 @@
 <template>
   <div class="slidev-layout two-cols-layout">
     <div v-if="$frontmatter.kicker" class="kicker">{{ $frontmatter.kicker }}</div>
-    <slot name="title" />
+    <slot />
     <div class="cols">
       <div class="col left"><slot name="left" /></div>
       <div class="col right"><slot name="right" /></div>
@@ -14,8 +14,9 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 5.2rem 7.3rem 4.2rem;
+  padding: 20px 20px 20px;
   background: var(--unc-ink);
+  color: var(--unc-paper);
 }
 .kicker {
   color: var(--unc-blue-pale);

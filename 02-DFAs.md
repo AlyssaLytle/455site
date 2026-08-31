@@ -238,7 +238,7 @@ layout: two-cols
 
 ---
 
-::title::
+
 
 # Another Example
 
@@ -269,7 +269,7 @@ layout: two-cols
 
 
 ---
-::title::
+
 # Finding the Language of $M$
 
 
@@ -405,7 +405,7 @@ Let $M = (Q, \Sigma, \delta,s, F)$
 
 Let $w = w_1w_2\ldots w_n$ be a string where each $w_i$ is a member of the alphabet $\Sigma$
 
-$M$ accepts $w$ if there exists a sequence of *states* $r_1, r_2, \ldots, r_n$ such that:
+$M$ accepts $w$ if there exists a sequence of *states* $r_0, r_1, r_2, \ldots, r_n$ such that:
 
 <v-clicks>
 
@@ -461,7 +461,7 @@ layout: two-cols
 
 ---
 
-::title::
+
 
 # Practice
 
@@ -500,7 +500,7 @@ Now we can use $\hat{\delta}$ to define acceptance to a language!
 
 For automaton $M = (Q, \Sigma, \delta, s, F)$, 
 
-$x \in L(M)$ iff $\hat{\delta}(s,x) \in F$.
+$w \in L(M)$ iff $\hat{\delta}(s,w) \in F$.
 
 </v-clicks>
 

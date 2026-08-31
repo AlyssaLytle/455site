@@ -222,7 +222,7 @@ $= \{1, 10, 110, 101, \ldots \}$
 layout: two-cols
 ---
 
-::title::
+
 
 # Subset Operator
 

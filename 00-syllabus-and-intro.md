@@ -55,7 +55,7 @@ Alyssa Lytle (she/her)
 ---
 layout: two-cols
 ---
-::title::
+
 
 # Your TA Team
 
@@ -107,7 +107,7 @@ By the end of this course, you'll be able to reason precisely about **what compu
 layout: two-cols
 ---
 
-::title::
+
 
 # Two-Way Expectations
 
