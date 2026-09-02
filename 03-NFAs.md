@@ -166,11 +166,19 @@ And NFAs don't *have* to have a transition defined for every state, input combin
 
 # Another feature: Epsilon Transitions
 
-* $\epsilon$-transitions can be useful in simplifying representation of a diagram. 
+* $\varepsilon$-transitions can be useful in simplifying representation of a diagram. 
 
-* Essentially, they give us transitions over *no* input (aka the empty string $\epsilon$)
+* Essentially, they give us transitions over *no* input (aka the empty string $\varepsilon$)
 
-* Note: Any NFA with $\epsilon$-transitions can be re-defined as an "equivalent" NFA *without* $\epsilon$-transitions.
+* Note: Any NFA with $\varepsilon$-transitions can be re-defined as an "equivalent" NFA *without* $\varepsilon$-transitions.
+
+## What I Expect you to Know
+
+The definition of an $\varepsilon$-transition and how to check a string for acceptance on an NFA containing $\varepsilon$-transitions.
+
+## What I Don't Expect You to Know/Do
+
+Define an NFA using $\varepsilon$-transitions, write out a computation trace for an NFA using $\varepsilon$-transitions, consider $\varepsilon$-transitions in your proofs.
 
 
 <!-- * In this example, you'll see that they are helpful in handling the beginning and end of an input, which is where I intend to use them in this course. -->
