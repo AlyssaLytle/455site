@@ -226,7 +226,7 @@ $$A = \{w \in \{a,b\}^* \mid w \textrm{ has } 3m \textrm{ or } 4m \textrm{ } a's
 
 For a nondeterministic automaton $N = (Q, \Sigma, \Delta, S, F)$, $\Delta : Q \times \Sigma \to 2^Q$
 
-  and $\hat{\Delta}$ is defined such that $\hat{\Delta} : Q \times \Sigma^* \to 2^Q$
+  and $\hat{\Delta}$ is defined such that $\hat{\Delta} : 2^Q \times \Sigma^* \to 2^Q$
 
   and for $A \subseteq Q, a \in \Sigma, x \in \Sigma^*$
 
@@ -443,7 +443,7 @@ layout: two-cols
 
 Let's take an example DFA from a previous class...
 
-$$A = \{w \in \{a,b\}^* \mid w \textrm{ has odd length} \}$$
+$$A = \{w \in \{0,1\}^* \mid w \textrm{ has odd length} \}$$
 
 <img src="/public/fa-odd-length.png" width="300"/>
 
@@ -460,7 +460,7 @@ So, for NFA $N = (Q_N, \Sigma, \Delta_N, S_N, F_M)$
 * $Q_N = Q_M$
 * $\Delta_N:$ 
 
-| | $a$| $b$ |
+| | $0$| $1$ |
 | --- | --- | --- |
 | $\rightarrow q_0$  | $\{q_1\}$ | $\{q_1\}$ |
 |$q_1^*$ | $\{q_0\}$ | $\{q_0\}$ |
