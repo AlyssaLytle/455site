@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: seriph
+theme: ./unc-cs
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 # background: https://cover.sli.dev
@@ -19,14 +19,16 @@ transition: fade
 comark: true
 # duration of the presentation
 duration: 35min
-
-
+kicker: COMP 455 · Models of Languages and Computation
+layout: cover
 ---
 
 
-# Nonregular Languages
+# Nonregular Languages and The Pumping Lemma
 
 ---
+
+# Motivation
 
 <v-clicks>
 
@@ -298,7 +300,11 @@ layout: two-cols
 
 ---
 
+
+
 # Cycles
+
+::left::
 
 Note that this "cycle" appears.
 
@@ -347,6 +353,8 @@ layout: two-cols
 
 # Back to Our Example
 
+::left::
+
 <img src="/public/pumping-lemma/nfa.png" width="300"/>
 
 We chose $s = xyz = 101$, 
@@ -383,6 +391,8 @@ According to The Pumping Lemma, this should work for *every string* of a certain
 layout: two-cols
 
 ---
+
+::left::
 
 <img src="/public/pumping-lemma/nfa.png" width="300"/>
 
@@ -471,27 +481,4 @@ We can express this as a two column proof by contradiction:
 
 # Proving Line 4
 
-Want to prove: it is impossible to split $s$ into $s = xyz$, where for any $i \geq 0$ the string $xy^iz$ is in $B$.
 
-This will be a *proof by cases*.
-
-There are three possible situations we must consider for the assignment of string $y$ in $s=xyz$, and we can see why for each of them $xy^iz \notin B$.
-
-<v-clicks>
-
-
-
-Case 1: The string $y$ consists only of $a$s, so $y = a^t = aaa \ldots a$ <br>
- $y$ can't be "deleted" because then there will be more $b$s than $a$s, and "pumping" $y$ (e.g. the string $xy^2z$) would result in more $a$s than $b$s and so is not a member of $B$. 
-
-
-Case 2: The string $y$ consists only of $b$s, so $y = b^t = bbb \ldots b$ <br>
- This can be shown with the same reasoning as Case 1. 
-
-
-Case 3: The string $y$ consists of both $a$s and $b$s, so $y = aaaa\ldots bbbb$ <br>
-In this case, pumping $y$ (e.g. the string $xy^2z$) may have the same number of $a$s and $b$s, but they will be out of order with some $b$s before $a$s. Hence it is not a member of $B$.
-
-$\square$
-
-</v-clicks>
