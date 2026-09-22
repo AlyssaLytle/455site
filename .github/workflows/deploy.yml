@@ -50,7 +50,7 @@ jobs:
             --base /${{ github.event.repository.name }}/03-NFAs/
 
           nr build 05-pumping-lemma.md \
-            --out dist/05-pumping-lemma \
+            --out dist/04-pumping-lemma \
             --base /${{ github.event.repository.name }}/05-pumping-lemma/
 
       - name: Create landing page
