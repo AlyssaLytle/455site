@@ -346,6 +346,8 @@ If $A$ is a regular language, then there is a number $p$ (the pumping length) wh
 
 </v-clicks>
 
+
+
 ---
 layout: two-cols
 
@@ -387,16 +389,20 @@ According to The Pumping Lemma, this should work for *every string* of a certain
 
 </v-clicks>
 
+
+
 ---
 layout: two-cols
 
 ---
 
+# Another Example
+
 ::left::
 
 <img src="/public/pumping-lemma/nfa.png" width="300"/>
 
-We chose $s = xyz = 11011$, 
+Let's choose $s = xyz = 11011$, 
 
 with $x = 11$, 
 
