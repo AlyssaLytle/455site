@@ -472,8 +472,8 @@ We can express this as a two column proof by contradiction:
 | Proof Step | Reasoning |
 | --- | --- |
 | <span v-click="1"> 1. $B = \{a^nb^n \mid n \geq 0 \}$ is a regular language</span>| <span v-click="1"> Assumption  </span> |
-| <span v-click="2"> 2. $\exists s = a^pb^p \in B$ </span>| <span v-click="2"> Definition of $B$ </span> |
-| <span v-click="3"> 3. $s$ can be split into $s = xyz$, where for any $i \geq 0$ the string $xy^iz$ is in $B$ </span>| <span v-click="3"> Pumping Lemma </span> |
+| <span v-click="2"> 2. $s$ can be split into $s = xyz$, where for any $i \geq 0$ the string $xy^iz$ is in $B$ </span>| <span v-click="2"> Pumping Lemma </span> |
+| <span v-click="3"> 3. $\exists s = a^pb^p \in B$ </span>| <span v-click="3"> Definition of $B$ </span> |
 | <span v-click="4"> 4. It's impossible to split $s$ into $s = xyz$, where $\forall i \geq 0$, $xy^iz$ is in $B$ </span>| <span v-click="4"> Shown Next...</span> |
 | <span v-click="5"> $\rightarrow \leftarrow$ </span>| <span v-click="5">Lines 3 and 4 contradict.</span> |
 
