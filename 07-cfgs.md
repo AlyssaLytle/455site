@@ -373,3 +373,111 @@ To get to non-terminal $V$, you must encounter exactly three $b$'s. You can also
 </v-clicks>
 ---
 
+
+---
+
+# Converting a CFG to a PDA
+
+From a high level:
+
+
+
+<v-clicks>
+
+- We can use the idea of *substitution* used by CFGs. In other words, CFGs use variables essentially as intermediate symbols and substitute them using the rules of the grammar until we get to a string of only terminal symbols.
+
+- The PDA will use this same idea. It can push the start symbol on the stack and then:
+    - If the top element of the stack is a nonterminal, pop it and push a substitution
+    - If the top element of the stack is a terminal, pop it and check if it matches the input string 
+
+</v-clicks>
+
+
+---
+
+# Converting a CFG to a PDA
+
+1. Place the marker symbol \$ and the start variable on the stack.
+2. Repeat the following steps:
+
+<v-clicks>
+
+  a. If the top element in the stack is a nonterminal symbol (e.g. $A$), nondeterministically select one of the rules for $A$ and substitute $A$ by applying this rule. Push that new substution onto the stack.
+
+  b. If the top element in the stack is a terminal symbol (e.g. $a$), read the next symbol from the input to see if it matches $a$. If they match, continue. Otherwise, consider this a reject and try another "branch" of nondeterminism. (Apply a different rule in the previous step.)
+
+  c. If the top of the stack is \$, this means the stack is empty, so transition to the accept state. If the input has all be read, that means that the string is accepted.
+
+</v-clicks>
+
+---
+
+# Converting a CFG to a PDA
+
+$$
+\begin{align*}
+    S &\to aTb ~|~ b \\
+    T & \to Ta ~|~ \varepsilon
+\end{align*}$$
+
+<img src="/public/cfg-conversion/s1.png" width="400"/>
+
+---
+
+# Converting a CFG to a PDA
+
+$$
+\begin{align*}
+    S &\to aTb ~|~ b \\
+    T & \to Ta ~|~ \varepsilon
+\end{align*}$$
+
+<img src="/public/cfg-conversion/s2.png" width="400"/>
+
+---
+
+# Converting a CFG to a PDA
+
+$$
+\begin{align*}
+    S &\to aTb ~|~ b \\
+    T & \to Ta ~|~ \varepsilon
+\end{align*}$$
+
+<img src="/public/cfg-conversion/s3.png" width="400"/>
+
+---
+
+# Converting a CFG to a PDA
+
+$$
+\begin{align*}
+    S &\to aTb ~|~ b \\
+    T & \to Ta ~|~ \varepsilon
+\end{align*}$$
+
+<img src="/public/cfg-conversion/s4.png" width="400"/>
+
+---
+
+# Converting a CFG to a PDA
+
+$$
+\begin{align*}
+    S &\to aTb ~|~ b \\
+    T & \to Ta ~|~ \varepsilon
+\end{align*}$$
+
+<img src="/public/cfg-conversion/s5.png" width="400"/>
+
+---
+
+# Converting a CFG to a PDA
+
+$$
+\begin{align*}
+    S &\to aTb ~|~ b \\
+    T & \to Ta ~|~ \varepsilon
+\end{align*}$$
+
+<img src="/public/cfg-conversion/final.png" width="400"/>

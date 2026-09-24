@@ -53,6 +53,10 @@ jobs:
             --out dist/05-pumping-lemma \
             --base /${{ github.event.repository.name }}/05-pumping-lemma/
 
+          nr build 06-pdas.md \
+            --out dist/06-pdas \
+            --base /${{ github.event.repository.name }}/06-pdas/
+
       - name: Create landing page
         run: |
           cat > dist/index.html <<'EOF'
@@ -70,6 +74,7 @@ jobs:
                 <li><a href="./02-DFAs/">Aug 25+27: DFAs</a></li>
                 <li><a href="./03-NFAs/">Sep 1 + 3: NFAs</a></li>
                 <li><a href="./05-pumping-lemma/">Sep 22: Pumping Lemma</a></li>
+                <li><a href="./06-pdas/">Sep 24: Pushdown Automata</a></li>
               </ul>
             </body>
           </html>
