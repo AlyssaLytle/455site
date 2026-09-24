@@ -53,7 +53,7 @@ jobs:
             --out dist/05-pumping-lemma \
             --base /${{ github.event.repository.name }}/05-pumping-lemma/
 
-          nr build 07-cfgs.md \
+          nr build 06-pdas.md \
             --out dist/06-pdas \
             --base /${{ github.event.repository.name }}/06-pdas/
 
