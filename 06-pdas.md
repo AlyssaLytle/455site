@@ -192,8 +192,12 @@ and $\mathcal{P}(Q \times \Gamma_\varepsilon)$ is the powerset of $\mathcal{P}(Q
 
 
 ---
+layout: two-cols
+---
 
 # Using a PDA to Recognize $a^nb^n$ (continued)
+
+::left::
 
 Define our PDA as $(Q, \Sigma, \Gamma, \delta, s, F)$ where: 
 
@@ -207,8 +211,14 @@ Define our PDA as $(Q, \Sigma, \Gamma, \delta, s, F)$ where:
 
 </v-clicks>
 
+::right::
+
+<v-clicks>
+
 <img src="/public/PDA-ttable.png" width="400"/>
 
+"If I'm in state $q_2$, I read an $a$, and pop nothing from the stack, transition to $q_2$ and push an $A$ on the stack."
+</v-clicks>
 
 ---
 
