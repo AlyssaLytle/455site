@@ -207,6 +207,8 @@ Define our PDA as $(Q, \Sigma, \Gamma, \delta, s, F)$ where:
 
 </v-clicks>
 
+<img src="/public/PDA-ttable.png" width="400"/>
+
 
 ---
 
