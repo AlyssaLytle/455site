@@ -56,6 +56,10 @@ jobs:
           nr build 06-pdas.md \
             --out dist/06-pdas \
             --base /${{ github.event.repository.name }}/06-pdas/
+          
+          nr build 07-cfgs.md \
+            --out dist/07-cfgs \
+            --base /${{ github.event.repository.name }}/07-cfgs/
 
       - name: Create landing page
         run: |
@@ -75,6 +79,7 @@ jobs:
                 <li><a href="./03-NFAs/">Sep 1 + 3: NFAs</a></li>
                 <li><a href="./05-pumping-lemma/">Sep 22: Pumping Lemma</a></li>
                 <li><a href="./06-pdas/">Sep 24: Pushdown Automata</a></li>
+                <li><a href="./07-cfgs/">Sep 29-Oct 1: Context Free Grammars</a></li>
               </ul>
             </body>
           </html>

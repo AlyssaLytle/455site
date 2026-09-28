@@ -1,8 +1,6 @@
-
-
 ---
 # try also 'default' to start simple
-theme: seriph
+theme: ./unc-cs
 title: Context-Free Grammars + Languages
 info: |
   ## Slides for 455
@@ -17,11 +15,16 @@ transition: fade
 comark: true
 # duration of the presentation
 duration: 35min
-
-
+kicker: COMP 455 · Models of Languages and Computation
+layout: cover
 ---
 
 # Context-Free Grammars + Languages
+
+---
+
+# PDAs Review
+
 
 ---
 
@@ -70,7 +73,7 @@ where
 
 <v-clicks>
 
-$N$, the nonterminals, would be $\{\texttt{<stmt>}, \texttt{<if-stmt>}   \ldots \texttt{<var>} \}$
+$N$, the nonterminals, would be $\{\texttt{<stmt>}, \texttt{<if-stmt>},  \ldots \texttt{<var>} \}$
 
 $\Sigma$, the terminals, would be  $\{ \textbf{if}, \textbf{then}, <, >, +, \ldots \}$
 
@@ -120,6 +123,8 @@ $A \rightarrow \alpha_1  \mid  \alpha_2  \mid  \alpha_3$
 
 # $a^nb^n$
 
+<v-clicks>
+
 The nonregular set $\{a^nb^n  \mid n \geq 0 \}$ can be represented  as a CFL 
 
 $S \rightarrow aSb  \mid \epsilon$
@@ -132,6 +137,8 @@ $G = (N, \Sigma, P, S)$, where
 * $N = \{S\}$
 * $\Sigma = \{a,b\}$
 * $P = \{S \rightarrow aSb, S \rightarrow \epsilon \}$
+
+</v-clicks>
     
 ---
 
@@ -222,157 +229,28 @@ This allows us to define the *language* of a grammar in the following way:
 The *language of the grammar* $G$ is $\{w \in \Sigma^*  \mid S \xrightarrow[G]{*}w\}$
 
 ---
-layout: center
-
-
----
 
 # How do CFLs Compare to Regular Languages?
 
 
-<img src="/public/cfls-rls.png" width="700"/>
+<img src="/public/cfls-rls.png" width="600"/> 
 
 ---
-
-# Converting a DFA into a CFG
-
-There is an easy step-by-step way to convert a DFA $M=(Q,\Sigma,\delta,s,F)$ into a CFG:
+# CFLs, CFGs, and PDAs
 
 <v-clicks>
 
-* For each $q_i \in Q$, make a nonterminal $R_i$
-* For all transitions $\delta(q_i, x) = q_j$, add the rule $R_i \rightarrow xR_j$
-* If $q_i$ is an accept state, add the rule $R_i \rightarrow \epsilon$
-* If $q_0$ is the start state of the machine, make $R_0$ the start variable.
+Recall: A language is context free if and only if some pushdown automaton recognizes it. 
+
+This statement isn't actually a given. By definition, context-free grammars describe context-free languages. 
+
+The specific lemma we'd like to prove is:
+
+If a language is context free, then some pushdown automaton recognizes it.
+
+We will prove this lemma by showing every CFG can be converted into an "equivalent" PDA. 
 
 </v-clicks>
-
----
-
-# Designing CFGs
-
-Now that we understand how to read and interpret the definitions of CFGs to determine what CFL they generate, let's practice generating a CFG given a CFL!
-
----
-
-# First Design a DFA
-
-If the language you are trying to design a CFG for is also regular, you can first define a DFA that recognizes it and convert that DFA to a CFG!
-
-## Example in Lesson
-
----
-
-# Union Two Simpler CFGs
-
-## Example
-
-<v-clicks>
-
-Define a CFG that generates $\{a^nb^n \mid n \geq 0\} \cup \{b^na^n \mid n \geq 0\}$
-
-We can define a CFG for $\{a^nb^n \mid n \geq 0\}$:
-
-$$
-    \begin{align*}
-        S_1 \to aS_1b | \varepsilon
-    \end{align*}
-$$
-
-and for $\{b^na^n \mid n \geq 0\}$:
-
-$$
-\begin{align*}
-        S_2 \to bS_2a | \varepsilon
-\end{align*}
-$$
-
-And then union them:
-
-$$
-\begin{align*}
-    S &\to S_1 | S_2 \\
-    S_1 &\to aS_1b | \varepsilon\\
-    S_2 &\to bS_2a | \varepsilon
-\end{align*}
-$$
-
-</v-clicks>
-
----
-
-
-# Make Use of Underlying Patterns + Structures
-
-This tip is a little more general, but just as you saw that certain regular languages present themselves with specific properties in their respective DFAs/NFAs, you'll find some patterns in CFLs!
-
-## Example: Balance Using Middle Variable
-
-$L = \{w \in \{a,b\}^*| w$ is a palindrome $\}$
-
-another way you can say this is
-
-$L = \{w \in \{a,b\}^*| w = w^{\mathcal{R}}\}$
-
-Again, to maintain balance, we want to define our rules off of a middle symbol.
-
-$$
-\begin{align*}
-    S \to aSa ~|~ bSb ~|~ a ~|~ b ~|~ \varepsilon 
-\end{align*}
-$$
-
----
-
-
-# Make Use of Underlying Patterns + Structures
-
-## Another Example: Underlying Recursion
-
-<v-clicks>
-
-The string $a^ib^{2i}$ can be defined as a recursive function in such a way, with the \verb|+| symbol denoting concatenation:
-
-* Base Case: `f(0) = ""` (empty string)
-
-* Recursive Rule: `f(i) = "a" + f(i-1) + "bb"`
-   
-
-This could translate to the following CFG:
-
-$$S  \to aSbb ~|~ \varepsilon$$
-
-</v-clicks>
-
----
-
-# Make Use of Underlying Patterns + Structures
-
-## Another Example: Counting Characters
-
-<v-clicks>
-
- $L = \{ w~|~w$ contains at least three  b's $\}$
-
-(You could design a DFA that recognizes this language and convert it to a CFG, and you'd get the grammar below.)
-
-This structure emerges. It lies from the idea that "you must encounter this symbol to advance towards a terminal"
-
-$$
-\begin{align*}
-    S &\to aS | bT\\
-    T &\to aT | bU \\
-    U &\to aU | bV \\
-    V &\to aV | bV| \varepsilon
-\end{align*}
-$$
-
-To get to non-terminal $V$, you must encounter exactly three $b$'s. You can also encounter as many $a$'s as you like. Additionally, $V$ allows us to append as many $a$'s and $b$'s as desired, so it can generate any string of that form.
-
-
-</v-clicks>
----
-
 
 ---
 
@@ -481,3 +359,116 @@ $$
 \end{align*}$$
 
 <img src="/public/cfg-conversion/final.png" width="400"/>
+
+---
+
+# Designing CFGs
+
+Now that we understand how to read and interpret the definitions of CFGs to determine what CFL they generate, let's practice generating a CFG given a CFL!
+
+---
+
+# First Design a DFA
+
+If the language you are trying to design a CFG for is also regular, you can first define a DFA that recognizes it and convert that DFA to a CFG!
+
+---
+
+# Converting a DFA into a CFG
+
+There is an easy step-by-step way to convert a DFA $M=(Q,\Sigma,\delta,s,F)$ into a CFG:
+
+<v-clicks>
+
+* For each $q_i \in Q$, make a nonterminal $R_i$
+* For all transitions $\delta(q_i, x) = q_j$, add the rule $R_i \rightarrow xR_j$
+* If $q_i$ is an accept state, add the rule $R_i \rightarrow \epsilon$
+* If $q_0$ is the start state of the machine, make $R_0$ the start variable.
+
+</v-clicks>
+
+---
+
+# Union Two Simpler CFGs
+
+## Example
+
+<v-clicks>
+
+Define a CFG that generates $\{a^nb^n \mid n \geq 0\} \cup \{b^na^n \mid n \geq 0\}$
+
+We can define a CFG for $\{a^nb^n \mid n \geq 0\}$:
+
+$$
+    \begin{align*}
+        S_1 \to aS_1b | \varepsilon
+    \end{align*}
+$$
+
+and for $\{b^na^n \mid n \geq 0\}$:
+
+$$
+\begin{align*}
+        S_2 \to bS_2a | \varepsilon
+\end{align*}
+$$
+
+And then union them:
+
+$$
+\begin{align*}
+    S &\to S_1 | S_2 \\
+    S_1 &\to aS_1b | \varepsilon\\
+    S_2 &\to bS_2a | \varepsilon
+\end{align*}
+$$
+
+</v-clicks>
+
+---
+
+
+# Make Use of Underlying Patterns + Structures
+
+This tip is a little more general, but just as you saw that certain regular languages present themselves with specific properties in their respective DFAs/NFAs, you'll find some patterns in CFLs!
+
+## Example: Balance Using Middle Variable
+
+$L = \{w \in \{a,b\}^*| w$ is a palindrome $\}$
+
+another way you can say this is
+
+$L = \{w \in \{a,b\}^*| w = w^{\mathcal{R}}\}$
+
+Again, to maintain balance, we want to define our rules off of a middle symbol.
+
+$$
+\begin{align*}
+    S \to aSa ~|~ bSb ~|~ a ~|~ b ~|~ \varepsilon 
+\end{align*}
+$$
+
+---
+
+
+# Make Use of Underlying Patterns + Structures
+
+## Another Example: Underlying Recursion
+
+<v-clicks>
+
+The string $a^ib^{2i}$ can be defined as a recursive function in such a way, with the \verb|+| symbol denoting concatenation:
+
+* Base Case: `f(0) = ""` (empty string)
+
+* Recursive Rule: `f(i) = "a" + f(i-1) + "bb"`
+   
+
+This could translate to the following CFG:
+
+$$S  \to aSbb ~|~ \varepsilon$$
+
+</v-clicks>
+
+---
+
