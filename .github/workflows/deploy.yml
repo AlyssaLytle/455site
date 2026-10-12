@@ -61,6 +61,10 @@ jobs:
             --out dist/07-cfgs \
             --base /${{ github.event.repository.name }}/07-cfgs/
 
+          nr build 08-non-cfls.md \
+            --out dist/08-non-cfls \
+            --base /${{ github.event.repository.name }}/08-non-cfls/
+
       - name: Create landing page
         run: |
           cat > dist/index.html <<'EOF'
@@ -80,6 +84,7 @@ jobs:
                 <li><a href="./05-pumping-lemma/">Sep 22: Pumping Lemma</a></li>
                 <li><a href="./06-pdas/">Sep 24: Pushdown Automata</a></li>
                 <li><a href="./07-cfgs/">Sep 29-Oct 1: Context Free Grammars</a></li>
+                <li><a href="./08-non-cfls/">Oct 13: Non-Context Free Languages</a></li>
               </ul>
             </body>
           </html>
