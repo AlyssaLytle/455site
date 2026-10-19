@@ -73,8 +73,6 @@ There are multiple other "computationally equivalent" formalisms that have been 
 * modern programming languages (e.g. C)
 
 
-We will use the Turing Machine as our model of computation because it *most closely resembles how modern computers behave*.
-
 Defining computability in terms of a problem solvable by a Turing Machine: The Church-Turing Thesis.
 
 </v-clicks>
@@ -96,8 +94,13 @@ Defining computability in terms of a problem solvable by a Turing Machine: The C
 </v-clicks>
 
 ---
+layout: two-cols
+
+---
 
 # The question that started it all
+
+::left::
 
 <v-clicks>
 
@@ -106,6 +109,10 @@ Defining computability in terms of a problem solvable by a Turing Machine: The C
 * *("What even is this mechanical procedure?")*
 
 </v-clicks>
+
+::right::
+
+<img src="/public/tm/Hilbert.jpg" width="300"/>
 
 ---
 
@@ -116,7 +123,7 @@ Defining computability in terms of a problem solvable by a Turing Machine: The C
 * Proved the answer to Hilbert's question is no 
 * (Accidentally) Defined general-purpose computing
 * Helped end a world war
-* Seeded every weaker model you've studied this semester.
+* Led to definition of every weaker model you've studied this semester.
 </v-clicks>
 
 ---
@@ -147,6 +154,8 @@ layout: two-cols
 
 # The World in 1928–1936
 
+
+
 <v-clicks>
 
 * 1928: Hilbert & Ackermann pose the Entscheidungsproblem
@@ -157,8 +166,14 @@ layout: two-cols
 </v-clicks>
 
 ---
+layout: two-cols
+
+---
 
 # What was Hilbert *Actually* Asking?
+
+
+::left::
 
 <v-clicks>
 
@@ -169,9 +184,19 @@ layout: two-cols
 
 </v-clicks>
 
+::right::
+
+<img src="/public/tm/Kurt_godel.jpg" width="150"/>
+
+<img src="/public/tm/Alonzo_Church.jpg" width="150"/> 
+
+
+
 ---
 
 # What Counted as a "Computer" in 1936?
+
+<img src="/public/tm/human-computers.jpg" width="300"/> 
 
 <v-clicks>
 
@@ -217,9 +242,13 @@ Key observation: every one of these was *special-purpose*. None had a notion of 
 
 
 ---
+layout: two-cols
 
+---
 
 # Turing's 1936 Paper
+
+::left::
 
 <v-clicks>
 
@@ -229,11 +258,10 @@ Key observation: every one of these was *special-purpose*. None had a notion of 
 
 </v-clicks>
 
-<v-click>
 
-Design choices came from asking what a *person* could do without unlimited memory of their own. That's why the alphabet is finite, states are finite, and moves are local (L/R).
+::right:: 
 
-</v-click>
+<img src="/public/tm/turing-paper.png" width="400"/> 
 
 <!-- --- -->
 
@@ -259,7 +287,7 @@ Design choices came from asking what a *person* could do without unlimited memor
 
 * 1918:  The German Enigma cipher was created by German engineer Arthur Scherbius
 * ~1926: The German military adopts the Enigma cipher
-* 1932: Polish cryptanalysts Rejewski, Różycki, Zygalski first cracked the machine by finding patterns in the cyphertext, causing Germany to make updates/fixes.
+* 1932: Polish cryptanalysts Rejewski, Różycki, Zygalski first cracked the machine by finding patterns in the ciphertext, causing Germany to make updates/fixes.
 * 1938: Polish machine "Bomba" designed to automate the decryption. The German's return by making the Enigma more computationally complex, making Bomba insufficient. 
 * 1939: Turing reports to the Government Code and Cypher School four days after Britain declares war on Germany
 * 1940: Turing + Gordon Welchman prototype an electromechanical machine, the "Bombe"
@@ -269,13 +297,24 @@ Design choices came from asking what a *person* could do without unlimited memor
 
 ---
 
+# The Bombe
+
+<img src="/public/tm/Bombe-rebuild.jpg" width="500"/> 
+
+
+---
+layout: two-cols
+
+---
+
 # U-boats + The Ethical Dilemma
+
+::left::
 
 <v-clicks>
 
 * U-boats were sinking the convoys bringing American supplies to Britain
 * Breaking naval Enigma let the Admiralty route convoys *around* U-boat wolfpacks
-* The Battle of the Atlantic turned in 1943 — not by one factor, but Bletchley was central
 
 </v-clicks>
 
@@ -291,40 +330,28 @@ Design choices came from asking what a *person* could do without unlimited memor
 </v-clicks>
 
 
----
+::right::
 
-# How much did it matter?
-
-<v-clicks>
-
-* Historians' estimate (Harry Hinsley and others): Bletchley shortened the war in Europe by 2–4 years
-* Secondary extrapolations: on the order of millions of lives saved. Treat as *informed estimate*, not measurement.
-* Important caveat: Bletchley employed ~10,000 people by 1945. Turing was *pivotal*, not solo.
-* The Bombe design was Turing & Welchman's. The U-boat break was *his team's*. The operation was collective.
-
-</v-clicks>
+<img src="/public/tm/convoy.jpg" width="400"/> 
 
 ---
 
-# Secrecy, Memory, Credit
+# Bletchley's Contribution
+
+<img src="/public/tm/Bletchley_Park.jpg" width="300"/> 
 
 <v-clicks>
 
+* Historians' estimate the work at Bletchley shortened the war in Europe by **2–4 years** and on the order of millions of lives saved (informed estimate)
+* Bletchley employed ~10,000 people by 1945. 
 * Bletchley stayed classified until the 1970s.
 * Participants couldn't tell families, employers, or historians what they'd done.
-* Many — especially the ~8,000 women who did skilled cryptanalytic and operational work — died uncredited.
-* The popular "Turing cracked Enigma" story erases:
-    * The Polish mathematicians who made the first break
-    * Gordon Welchman, Joan Clarke, Tommy Flowers
-    * Thousands of Wrens who operated the Bombes
+* Many (~8,000 women who did skilled cryptanalytic and operational work) died uncredited.
+
 
 </v-clicks>
 
-<v-click>
 
-*Food for thought:* How does the history of computing choose its heroes, and whom does that choice erase?
-
-</v-click>
 
 ---
 
@@ -332,6 +359,8 @@ Design choices came from asking what a *person* could do without unlimited memor
 
 
 # Alan Turing After The War
+
+
 
 <v-clicks>
 
@@ -344,6 +373,10 @@ Design choices came from asking what a *person* could do without unlimited memor
 * 2017: the "Alan Turing law": automatic posthumous pardons + "disregard-and-pardon" for the living
 
 </v-clicks>
+
+<!-- ::right:: 
+
+<img src="/public/tm/turing-statue.jpg" width="200"/>  -->
 
 ---
 
