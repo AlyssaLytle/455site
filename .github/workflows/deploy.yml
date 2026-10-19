@@ -65,6 +65,10 @@ jobs:
             --out dist/08-non-cfls \
             --base /${{ github.event.repository.name }}/08-non-cfls/
 
+          nr build 09-intro-tms.md \
+            --out dist/09-tms-history \
+            --base /${{ github.event.repository.name }}/09-tms-history/
+
       - name: Create landing page
         run: |
           cat > dist/index.html <<'EOF'
@@ -85,6 +89,7 @@ jobs:
                 <li><a href="./06-pdas/">Sep 24: Pushdown Automata</a></li>
                 <li><a href="./07-cfgs/">Sep 29-Oct 1: Context Free Grammars</a></li>
                 <li><a href="./08-non-cfls/">Oct 13: Non-Context Free Languages</a></li>
+                <li><a href="./09-tms-history/">Oct 20: An Introduction to Turing Machines</a></li>
               </ul>
             </body>
           </html>
