@@ -254,7 +254,7 @@ layout: two-cols-header
 
 ---
 
-# Another Example:
+<!-- # Another Example:
 
 Let's define a Turing Machine that recognizes $B  = \{w\#w \mid w \in \{0,1\}^*\}$.
 
@@ -281,7 +281,7 @@ Steps:
 
 
 
----
+--- -->
 
 # Defining Acceptance: Configurations
 
