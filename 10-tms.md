@@ -300,6 +300,7 @@ and the *rejecting configuration* is the configuration that contains the state $
 A Turing machine $M$ *accepts* input $w$ if there are a sequence of configurations that begin at the start configurations and finish in an accepting configuration.
 
 </v-clicks>
+
 ---
 
 # Languages and Recognizability

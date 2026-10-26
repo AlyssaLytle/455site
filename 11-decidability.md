@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: seriph
+theme: ./unc-cs
 title: Decidability
 info: |
   ## Slides for 455
@@ -15,6 +15,9 @@ transition: fade
 comark: true
 # duration of the presentation
 duration: 35min
+kicker: COMP 455 · Models of Languages and Computation
+layout: cover
+
 ---
 
 # Algorithms and Decidability
@@ -80,7 +83,6 @@ $S_\texttt{double} = \{\langle w\#w \rangle \mid w \in \{0,1\}^*\}$.
 
 2. Then, we present a general algorithm design for a Turing Machine that "decides" membership in $S_\texttt{double}$. 
     
-(We already did this in our last lecture!)
 
 </v-clicks>
 
@@ -102,14 +104,12 @@ But that's not always the case!
 
 </v-clicks>
 
----
-layout: two-cols-header
 
 ---
 
 # Input Notation: Example
 
-::left::
+
 
 <v-clicks>
 
@@ -123,27 +123,15 @@ To input $G$ in a Turing Machine, we have to represent it as a string.
 
 </v-clicks>
 
-::right::
-
-<v-clicks>
-
-
-
-For example, we could encode its vertices in a sequence followed by its edges in a sequence:
-
-$\langle G \rangle = (1,2,3,4)((1,2),(2,3),(3,1),(1,4))$
-
-</v-clicks>
-
 
 
 <v-clicks>
 
 So our "problem" could be described as language:
 
-$L = \{ \langle G \rangle \mid$ there exists a path in $G$ that touches all vertices $\}$
+$L = \{ \langle G, P \rangle \mid$ $P$ is a path in $G$ that touches all vertices $\}$
 
-Our Turing Machine *accepts* an input graph if such a path exists and *rejects* it otherwise.
+And design a Turing Machine that *accepts* this input if such a path exists + touches all vertices and *rejects* it otherwise.
 
 </v-clicks>
 
@@ -161,15 +149,15 @@ Let's show that the problem of "whether a string is *accepted* by a DFA" is deci
 
 We do this by building a TM that decides it!
 
-Let 
+<!-- Let 
 
 $A_{DFA} = \{ \langle B, w\rangle \mid B \textrm{ is a DFA that accepts input string } w \}$
 
-For $B$'s string representation, assume we have a string representation of the tuple, $B = (Q, \Sigma, \delta, s, F)$.
+For $B$'s string representation, assume we have a string representation of the tuple, $B = (Q, \Sigma, \delta, s, F)$. -->
 
 </v-clicks>
 
-
+<!-- 
 ---
 
 # Decidable Problems + Regular Languages (cont.)
@@ -188,7 +176,7 @@ High-level design of Turing Machine $M$:
     - Write on the tape to keep track of the changing state of $B$ as we step through $w$. (*Read from the tape to find out the transitions defined in $\delta$.) Continue until we reach the end of $w$.
 2. If the simulation ends in an accept state in $B$, *accept*! If it ends in a nonaccepting state in $B$, *reject*! (Determine if the state is in $F$ by reading $F$ from the tape.)
 
-</v-clicks>
+</v-clicks> -->
 
 
 ---
@@ -211,16 +199,16 @@ High-level design of Turing Machine $M$:
 
 <v-clicks>
 
-What if we want to check if a DFA accepts *anything*? Is this decidable?
+What if we want to check if a DFA accepts *nothing*? Is this decidable?
 
 *YES!*
 
-$E_{DFA} = \{\langle A \rangle | A \textrm{ is a DFA and } L(A) \neq \emptyset \}$
+$E_{DFA} = \{\langle A \rangle | A \textrm{ is a DFA and } L(A) = \emptyset \}$
 
 
 * General idea: We can't test all possible strings $w$ because that could be infinite, so let's leverage the fact that the sets of states $Q$ and transitions $\delta$ *are* finite! 
 
-* Starting with the start state, "mark" a state and follow all outgoing transitions. Mark every visited state. Repeat until either all states are marked or all transitions have been followed. If an accept state has been marked, *accept*. Otherwise, *reject*!
+* Starting with the start state, "mark" a state and follow all outgoing transitions. Mark every visited state. Repeat until either all states are marked or all transitions have been followed. If an accept state has not been marked, *accept*. Otherwise, *reject*!
 
 </v-clicks>
 
@@ -229,12 +217,19 @@ $E_{DFA} = \{\langle A \rangle | A \textrm{ is a DFA and } L(A) \neq \emptyset \
 
 # Decidable Problems + CFLs
 
-$E_{CFG} = \{\langle A \rangle | A \textrm{ is a CFG and } L(G) \neq \emptyset \}$
+<v-clicks>
+
+What about CFGs?
+
+$E_{CFG} = \{\langle A \rangle | A \textrm{ is a CFG and } L(G) = \emptyset \}$
 
 * General idea: 
     * Similar to the previous example, we can't test all possible strings $w$, but we know we have *finite* rules.
     * What does it mean to generate a string $w$. There has to be a mapping from a start variable to a string of all terminals. 
-    * This algorithms works similarly to the previous one, but backwards in a way. Start on all *terminal symbols*, and "mark" them. Mark any variable that has a rule mapping to only marked symbols. Keep going until all variables or all rules have been marked. If the start state has been marked, *accept*. Otherwise, *reject*!
+    * This algorithms works similarly to the previous one, but backwards in a way. Start on all *terminal symbols*, and "mark" them. Mark any variable that has a rule mapping to only marked symbols. Keep going until all variables or all rules have been marked. If the start state has not been marked, *accept*. Otherwise, *reject*!
+
+
+</v-clicks>
 
 <!-- ---
 

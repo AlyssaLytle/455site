@@ -73,6 +73,10 @@ jobs:
             --out dist/10-tms \
             --base /${{ github.event.repository.name }}/10-tms/
 
+            nr build 11-decidability.md \
+            --out dist/11-decidability \
+            --base /${{ github.event.repository.name }}/11-decidability/
+
       - name: Create landing page
         run: |
           cat > dist/index.html <<'EOF'
@@ -95,6 +99,7 @@ jobs:
                 <li><a href="./08-non-cfls/">Oct 13: Non-Context Free Languages</a></li>
                 <li><a href="./09-tms-intro/">Oct 20: An Introduction to Turing Machines</a></li>
                 <li><a href="./10-tms/">Oct 22: Turing Machines</a></li>
+                <li><a href="./11-decidability/">Oct 27: Decidability</a></li>
               </ul>
             </body>
           </html>
