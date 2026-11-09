@@ -81,6 +81,10 @@ jobs:
             --out dist/12-undec-dp \
             --base /${{ github.event.repository.name }}/12-undec-dp/
 
+            nr build 13-reductions.md \
+            --out dist/13-reductions \
+            --base /${{ github.event.repository.name }}/13-reductions/
+
       - name: Create landing page
         run: |
           cat > dist/index.html <<'EOF'
@@ -105,6 +109,7 @@ jobs:
                 <li><a href="./10-tms/">Oct 22: Turing Machines</a></li>
                 <li><a href="./11-decidability/">Oct 27: Decidability</a></li>
                 <li><a href="./12-undec-dp/">Nov 3: Undecidability</a></li>
+                <li><a href="./13-reductions/">Nov 10: Reductions + Rice's Theorem</a></li>
               </ul>
             </body>
           </html>

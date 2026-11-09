@@ -34,9 +34,9 @@ The main approach: Convert (or *reduce*) the problem to a known undecidable prob
 Today: 
 <v-clicks>
 
-- Prove $A_{TM}$ is undecidable, making it our first "known undecidable problem"
+- Remind ourselves of $A_{TM}$: our first "known undecidable problem"
 
-- Demonstrate how we can reduce $HALT_{TM}$ to this problem, showing $HALT_{TM}$ is also undecidable.
+- Demonstrate how we can reduce $AT_{TM}$ to $HALT_{TM}$, showing $HALT_{TM}$ is also undecidable.
 
 - Formally define the two types of reducibility.
 
@@ -323,7 +323,7 @@ If $M$ doesn't accept $w$: $L(F) = \emptyset \notin P$, so $\langle F\rangle \no
 
 <v-clicks>
 
-Rice's theorem says: if $P$ is non-trivial (neither empty nor all strings) and semantic (depends only on $L(M)$, not on how $M$ is coded), then $L_P$ is undecidable.
+Rice's theorem says: if $P$ is non-trivial (neither $\emptyset$ nor the set of all TM descriptions) and semantic (depends only on $L(M)$, not on how $M$ is coded), then $L_P$ is undecidable.
 
 ## When This Doesn't Apply
 
