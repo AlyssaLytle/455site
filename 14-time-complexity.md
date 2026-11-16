@@ -279,7 +279,7 @@ def selection_sort(items: list[int]) -> list[int]:
     return items
 ```
 
-<!-- 
+
 
 ---
 
@@ -302,7 +302,7 @@ Keep the highest-order term, drop the constant: selection sort runs in $O(n^2)$ 
 
 Is this the worst case? The inner loop runs the same number of times on **every** input of length $n$, so best, average, and worst case are all $O(n^2)$!
 
-</v-clicks> -->
+</v-clicks>
 
 ---
 
@@ -408,10 +408,10 @@ Now, let's define an algorithm $M$ to decide this.
 
 ---
 
-<!-- # PATH Algorithm -->
+# PATH Algorithm 
 
 
-<!-- 
+
 
 $${1|1-2|1-5|1-6}
 \begin{align*}
@@ -444,14 +444,14 @@ Total: <span v-mark="{color: 'orange', type: 'underline' }">$O(1) + O(m \cdot m^
 Let $n$ be the length of $\langle G, s, t \rangle$. Every node appears in the encoding, so $m \leq n$, and the runtime is $O(n^3)$. That's polynomial!
 
 Note: brute force would try roughly $m^m$ potential paths. That's a lot of searching... and not polynomial!
-</v-clicks> -->
+</v-clicks>
 
 
-<!-- --- -->
+---
 
 # Another Example: Relatively Prime Numbers
 
-<!-- <v-clicks>
+<v-clicks>
 
 Say our problem is: I want to know if two integers $x$ and $y$ are relatively prime.
     
@@ -509,4 +509,4 @@ So the loop runs at most about $2\log_2 x + 2\log_2 y + 1 = O(n)$ times.
 
 $O(n)$ iterations $\times$ polynomial time each $=$ polynomial. So $\textit{RELPRIME} \in \mathrm{P}$!
 
-</v-clicks> -->
+</v-clicks>
