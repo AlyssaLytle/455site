@@ -381,10 +381,10 @@ Show $\textit{SUBSETSUM}$ is in NP.
 
 Test a hypothetical verifier: $S = \{3, 34, 4, 12, 5, 2\}$ and $t = 9$. What should $V$ do with each certificate?
 
-    * $\{4, 5\}$ 
-    * $\{3, 5\}$ 
-    * $\{9\}$ 
-    * $\{3, 4, 2\}$ 
+* $\{4, 5\}$ 
+* $\{3, 5\}$ 
+* $\{9\}$ 
+* $\{3, 4, 2\}$ 
 
 ---
 
