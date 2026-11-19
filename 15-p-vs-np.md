@@ -379,18 +379,12 @@ Show $\textit{SUBSETSUM}$ is in NP.
 
 # LN: Subsetsum
 
-With a partner, before we look at the solution:
+Test a hypothetical verifier: $S = \{3, 34, 4, 12, 5, 2\}$ and $t = 9$. What should $V$ do with each certificate?
 
-1. Write a **verifier** $V$ for $\textit{SUBSETSUM}$. What is the certificate?
-
-2. Write a **nondeterministic** TM $N$ that decides $\textit{SUBSETSUM}$ by guessing and checking.
-
-3. Test your verifier: $S = \{3, 34, 4, 12, 5, 2\}$ and $t = 9$. What should $V$ do with each certificate?
-
-    * $\{4, 5\}$ <span v-click>→ accept</span>
-    * $\{3, 5\}$ <span v-click>→ reject: the sum is 8</span>
-    * $\{9\}$ <span v-click>→ reject: 9 is not in $S$</span>
-    * $\{3, 4, 2\}$ <span v-click>→ accept: certificates don't have to be unique!</span>
+    * $\{4, 5\}$ 
+    * $\{3, 5\}$ 
+    * $\{9\}$ 
+    * $\{3, 4, 2\}$ 
 
 ---
 
